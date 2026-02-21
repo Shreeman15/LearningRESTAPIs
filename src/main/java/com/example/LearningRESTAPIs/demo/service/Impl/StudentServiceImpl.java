@@ -1,4 +1,4 @@
-package com.example.LearningRESTAPIs.demo.service.impl;
+package com.example.LearningRESTAPIs.demo.service.Impl;
 
 import com.example.LearningRESTAPIs.demo.dto.StudentDto;
 import com.example.LearningRESTAPIs.demo.entity.Student;

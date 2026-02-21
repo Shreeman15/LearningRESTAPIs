@@ -5,13 +5,11 @@ package com.example.LearningRESTAPIs.demo.controller;
 //@ResponseBody : which tells about that the response should be in the form of the JSON not HTML
 // student controller ka bean apne aap mein hein springboot handle karega
 import com.example.LearningRESTAPIs.demo.dto.StudentDto;
-import com.example.LearningRESTAPIs.demo.entity.Student;
 import com.example.LearningRESTAPIs.demo.repository.StudentRepository;
 import com.example.LearningRESTAPIs.demo.service.StudentService;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -28,4 +26,11 @@ public class StudentController {
     public List<StudentDto> getAllStudents(){
         return studentService.getAllStudents();
     }
+
+    @GetMapping("/students/{id}/{name}")
+    public String getStudentById(@PathVariable Long id, @PathVariable String name){
+        return "Path variable : "+ id + " name is : " + name;
+    }
+
+
 }
